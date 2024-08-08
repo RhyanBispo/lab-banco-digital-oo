@@ -20,5 +20,12 @@ public class Banco {
 	public void setContas(List<Conta> contas) {
 		this.contas = contas;
 	}
+	public Set<Cliente> listarClientes() {
+        Set<Cliente> clientes = new HashSet<>();
+        for (Conta conta : contas) {
+            clientes.add(conta.getCliente());
+        }
+        return clientes;
+    }
 
 }
